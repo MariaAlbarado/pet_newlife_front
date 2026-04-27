@@ -1,0 +1,64 @@
+.container_inicial {
+  max-width: 400px;
+  min-height: 500px;
+  background-color: #fff;
+  margin: 100px auto;
+  border-radius: 20px;
+
+  box-shadow: 0 5px 9px rgba(0, 0, 0, 0.3);
+}
+
+.container_titulo {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 10px;
+  font-family: poppins, sans-serif;
+}
+
+.container_imput label {
+  padding-left: 22px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.container_imput {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+
+  
+}
+
+.container_imput input {
+  width: 80%;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  margin: 0 auto;
+}
+
+.botao_logar {
+  background-image: linear-gradient(to right, #fbf2ed, #be9577);
+  color: #353434;
+  font-weight: bold;
+  border-radius: 8px;
+  border: none;
+  height: 34px;
+  width: 80%;
+  margin:40px;
+
+  cursor: pointer;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+  box-shadow: 0 3px 7px rgba(2, 2, 2, 0.3);
+}
+
+.botao_logar:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+.paragrafo_login{
+  text-align: center;
+  font-size: 16px;
+  color:#696868
+}
