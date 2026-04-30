@@ -1,5 +1,6 @@
 import { FaPaw } from "react-icons/fa";
 import { useState } from "react";
+import Menu from "./components/Menu";
 
 import "./App.css";
 
@@ -32,6 +33,9 @@ function App() {
   }
 
   return (
+  <>
+    <Menu />
+
     <div className="container_inicial">
       <div className="container_titulo">
         <h1>
@@ -70,7 +74,9 @@ function App() {
         Faça login com suas credenciais de funcionário
       </p>
     </div>
+  </>
   );
+  
 }
 
 export default App;
