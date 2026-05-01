@@ -1,6 +1,6 @@
 import { FaPaw } from "react-icons/fa";
 import { useState } from "react";
-import Menu from "./components/Menu";
+import Menu from "./componentes/Menu";
 
 import "./App.css";
 
@@ -33,50 +33,49 @@ function App() {
   }
 
   return (
-  <>
-    <Menu />
+    <>
+      <Menu />
 
-    <div className="container_inicial">
-      <div className="container_titulo">
-        <h1>
-          <FaPaw /> {""} Pet new Life
-        </h1>
-        <p>Painel administrativo</p>
+      <div className="container_inicial">
+        <div className="container_titulo">
+          <h1>
+            <FaPaw /> {""} Pet new Life
+          </h1>
+          <p>Painel administrativo</p>
+        </div>
+
+        <form onSubmit={fazerLogin}>
+          <div className="container_imput">
+            <label>CPF</label>
+            <input
+              type="text"
+              placeholder="000.000.000-00"
+              value={cpf}
+              onChange={(e) => setCpf(e.target.value)}
+            />
+          </div>
+
+          <div className="container_imput">
+            <label>Senha</label>
+            <input
+              type="password"
+              placeholder="********"
+              value={senha}
+              onChange={(e) => setSenha(e.target.value)}
+            />
+          </div>
+
+          <button className="botao_logar" type="submit">
+            Entrar
+          </button>
+        </form>
+
+        <p className="paragrafo_login">
+          Faça login com suas credenciais de funcionário
+        </p>
       </div>
-
-      <form onSubmit={fazerLogin}>
-        <div className="container_imput">
-          <label>CPF</label>
-          <input
-            type="text"
-            placeholder="000.000.000-00"
-            value={cpf}
-            onChange={(e) => setCpf(e.target.value)}
-          />
-        </div>
-
-        <div className="container_imput">
-          <label>Senha</label>
-          <input
-            type="password"
-            placeholder="********"
-            value={senha}
-            onChange={(e) => setSenha(e.target.value)}
-          />
-        </div>
-
-        <button className="botao_logar" type="submit">
-          Entrar
-        </button>
-      </form>
-
-      <p className="paragrafo_login">
-        Faça login com suas credenciais de funcionário
-      </p>
-    </div>
-  </>
+    </>
   );
-  
 }
 
 export default App;
