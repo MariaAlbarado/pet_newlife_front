@@ -1,19 +1,18 @@
+import "./Menu.css";
+
 function Menu() {
   return (
-    <div>
-      <h2>Pet new Life</h2>
+    <div className="menu">
+      <h1>Pet New Life</h1>
+
+      <p>
+        Esse site é para ajudar animais a encontrarem um lar cheio de amor e cuidado.
+      </p>
+
       <nav>
-        <ul>
-          <li>
-            <a href="/pets">Pets</a>
-          </li>
-          <li>
-            <a href="/novo-pet">Novo Pet</a>
-          </li>
-          <li>
-            <a href="/">Sair</a>
-          </li>
-        </ul>
+        <a href="#">PETS</a>
+        <a href="#">NOVO PET</a>
+        <a href="#">SAIR</a>
       </nav>
     </div>
   );

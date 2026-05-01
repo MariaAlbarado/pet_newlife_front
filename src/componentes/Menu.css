@@ -1,0 +1,39 @@
+
+
+.menu {
+  background-image: linear-gradient(to right,  #FBF2ED, #fac893 );
+  text-align: center;
+  padding: 35px 20px;
+}
+
+.menu h1 {
+  font-size: 60px;
+  font-weight: bold;
+  margin: 0 0 20px 0;
+  color: black;
+}
+
+.menu p {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 35px;
+  color: black;
+}
+
+.menu nav {
+  display: flex;
+  justify-content: center;
+  gap: 45px;
+}
+
+.menu nav a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.menu nav a:hover {
+  color: #ff4d8d;
+}
