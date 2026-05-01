@@ -111,3 +111,59 @@
   color: #777;
   font-size: 14px;
 }
+
+.detalhes_pet {
+  background: #f8f9fb;
+  padding: 18px;
+  border-radius: 0 0 14px 14px;
+  margin-top: -8px;
+  margin-bottom: 18px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.detalhes_pet p {
+  background: #f1f3f5;
+  padding: 14px;
+  border-radius: 8px;
+  color: #555;
+  margin-bottom: 18px;
+}
+
+.detalhes_pet h4 {
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.detalhes_pet table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+.detalhes_pet thead {
+  background: #ff4d8d;
+  color: white;
+}
+
+.detalhes_pet th,
+.detalhes_pet td {
+  padding: 12px;
+  text-align: left;
+  font-size: 13px;
+  border-bottom: 1px solid #eee;
+}
+
+.container_pets .whatsapp {
+  background: #25d366;
+  color: white;
+  border: none;
+  padding: 7px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.container_pets .whatsapp:hover {
+  background: #1ebe5d;
+  color: white;
+}

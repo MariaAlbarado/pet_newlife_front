@@ -4,15 +4,52 @@ import "./PetsCadastrados.css";
 function PetsCadastrados() {
   const [busca, setBusca] = useState("");
   const [filtro, setFiltro] = useState("todos");
+  const [petAberto, setPetAberto] = useState(null);
 
   const pets = [
-    { id: 1, nome: "Rex", tipo: "Cachorro", adotado: false, foto: "/img/rex.jpg" },
+    {
+      id: 1,
+      nome: "Rex",
+      tipo: "Cachorro",
+      adotado: false,
+      foto: "/img/rex.jpg",
+    },
     { id: 2, nome: "Mia", tipo: "Gato", adotado: true, foto: "/img/mia.jpg" },
-    { id: 3, nome: "Luna", tipo: "Cachorro", adotado: false, foto: "/img/luna.jpg" },
-    { id: 4, nome: "Simba", tipo: "Gato", adotado: true, foto: "/img/simba.webp" },
-    { id: 5, nome: "Charlie", tipo: "Cachorro", adotado: false, foto: "/img/chalie.jpg" },
-    { id: 6, nome: "Bella", tipo: "Gato", adotado: true, foto: "/img/bella.jpg" },
-    { id: 7, nome: "Max", tipo: "Cachorro", adotado: false, foto: "/img/max.webp" },
+    {
+      id: 3,
+      nome: "Luna",
+      tipo: "Cachorro",
+      adotado: false,
+      foto: "/img/luna.jpg",
+    },
+    {
+      id: 4,
+      nome: "Simba",
+      tipo: "Gato",
+      adotado: true,
+      foto: "/img/simba.webp",
+    },
+    {
+      id: 5,
+      nome: "Charlie",
+      tipo: "Cachorro",
+      adotado: false,
+      foto: "/img/chalie.jpg",
+    },
+    {
+      id: 6,
+      nome: "Bella",
+      tipo: "Gato",
+      adotado: true,
+      foto: "/img/bella.jpg",
+    },
+    {
+      id: 7,
+      nome: "Max",
+      tipo: "Cachorro",
+      adotado: false,
+      foto: "/img/max.webp",
+    },
   ];
 
   const petsFiltrados = pets.filter((pet) => {
@@ -41,24 +78,63 @@ function PetsCadastrados() {
 
       <div className="container_lista">
         {petsFiltrados.map((pet) => (
-          <div className="card_pet" key={pet.id}>
-            <div className="card_info">
-              <img src={pet.foto} alt={pet.nome} className="avatar" />
+          <div key={pet.id}>
+            <div
+              className="card_pet"
+              onClick={() => setPetAberto(petAberto === pet.id ? null : pet.id)}
+            >
+              <div className="card_info">
+                <img src={pet.foto} alt={pet.nome} className="avatar" />
 
-              <div>
-                <h3>{pet.nome}</h3>
-                <p>
-                  {pet.tipo} • {pet.adotado ? "Adotado" : "Disponível"}
-                </p>
+                <div>
+                  <h3>{pet.nome}</h3>
+                  <p>
+                    {pet.tipo} • {pet.adotado ? "Adotado" : "Disponível"}
+                  </p>
+                </div>
+              </div>
+
+              <div className="card_actions">
+                <span className="badge">
+                  {pet.adotado ? "Adotado" : "Disponível"}
+                </span>
+                <span className="seta">▼</span>
               </div>
             </div>
 
-            <div className="card_actions">
-              <span className="badge">
-                {pet.adotado ? "Adotado" : "Disponível"}
-              </span>
-              <span className="seta">▼</span>
-            </div>
+            {petAberto === pet.id && (
+              <div className="detalhes_pet">
+                <p>{pet.nome} é um pet muito carinhoso e brincalhão.</p>
+
+                <h4>📋 Solicitações de Adoção</h4>
+
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Nome</th>
+                      <th>Telefone</th>
+                      <th>Moradia</th>
+                      <th>Pessoas</th>
+                      <th>Data</th>
+                      <th>Ações</th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <tr>
+                      <td>Luma Andrade</td>
+                      <td>(85) 98567-7689</td>
+                      <td>Casa</td>
+                      <td>4</td>
+                      <td>01/05/2026</td>
+                      <td>
+                        <button className="whatsapp">Falar no WhatsApp</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            )}
           </div>
         ))}
       </div>

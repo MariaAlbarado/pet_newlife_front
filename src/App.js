@@ -38,7 +38,7 @@ function App() {
       <Menu />
       <PetsCadastrados />
 
-      {/*
+      
       <div className="container_inicial">
         <div className="container_titulo">
           <h1>
@@ -77,7 +77,7 @@ function App() {
           Faça login com suas credenciais de funcionário
         </p>
       </div>
-      */}
+      
     </>
   );
 }
