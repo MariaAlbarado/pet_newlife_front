@@ -6,13 +6,13 @@ function PetsCadastrados() {
   const [filtro, setFiltro] = useState("todos");
 
   const pets = [
-    { id: 1, nome: "Rex", tipo: "Cachorro", adotado: false },
-    { id: 2, nome: "Mia", tipo: "Gato", adotado: true },
-    { id: 3, nome: "Luna", tipo: "Cachorro", adotado: false },
-    { id: 4, nome: "Simba", tipo: "Gato", adotado: true },
-    { id: 5, nome: "Charlie", tipo: "Cachorro", adotado: false },
-    { id: 6, nome: "Bella", tipo: "Gato", adotado: true },
-    { id: 7, nome: "Max", tipo: "Cachorro", adotado: false },
+    { id: 1, nome: "Rex", tipo: "Cachorro", adotado: false, foto: "/img/rex.jpg" },
+    { id: 2, nome: "Mia", tipo: "Gato", adotado: true, foto: "/img/mia.jpg" },
+    { id: 3, nome: "Luna", tipo: "Cachorro", adotado: false, foto: "/img/luna.jpg" },
+    { id: 4, nome: "Simba", tipo: "Gato", adotado: true, foto: "/img/simba.webp" },
+    { id: 5, nome: "Charlie", tipo: "Cachorro", adotado: false, foto: "/img/chalie.jpg" },
+    { id: 6, nome: "Bella", tipo: "Gato", adotado: true, foto: "/img/bella.jpg" },
+    { id: 7, nome: "Max", tipo: "Cachorro", adotado: false, foto: "/img/max.webp" },
   ];
 
   const petsFiltrados = pets.filter((pet) => {
@@ -43,7 +43,7 @@ function PetsCadastrados() {
         {petsFiltrados.map((pet) => (
           <div className="card_pet" key={pet.id}>
             <div className="card_info">
-              <div className="avatar"></div>
+              <img src={pet.foto} alt={pet.nome} className="avatar" />
 
               <div>
                 <h3>{pet.nome}</h3>
