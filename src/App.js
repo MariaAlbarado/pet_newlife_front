@@ -5,6 +5,7 @@ import PetsCadastrados from "./pages/PetsCadastrados";
 
 import "./App.css";
 
+
 function App() {
   const [cpf, setCpf] = useState("");
   const [senha, setSenha] = useState("");
@@ -37,7 +38,8 @@ function App() {
     <>
       <Menu />
       <PetsCadastrados />
-
+      
+      {/*
       
       <div className="container_inicial">
         <div className="container_titulo">
@@ -77,7 +79,7 @@ function App() {
           Faça login com suas credenciais de funcionário
         </p>
       </div>
-      
+        */}
     </>
   );
 }

@@ -1,10 +1,26 @@
-import { useState } from "react";
 import "./PetsCadastrados.css";
+import { useState, useEffect } from "react";
 
 function PetsCadastrados() {
   const [busca, setBusca] = useState("");
   const [filtro, setFiltro] = useState("todos");
   const [petAberto, setPetAberto] = useState(null);
+  const [petsApi, setPetsApi] = useState([]);
+
+  useEffect(() => {
+    async function buscarPets() {
+      try {
+        const resposta = await fetch("http://localhost:3000/api/admin/pets");
+        const dados = await resposta.json();
+
+        setPetsApi(dados.pets);
+      } catch (error) {
+        console.log("Erro ao buscar pets:", error);
+      }
+    }
+
+    buscarPets();
+  }, []);
 
   const pets = [
     {
@@ -52,7 +68,7 @@ function PetsCadastrados() {
     },
   ];
 
-  const petsFiltrados = pets.filter((pet) => {
+  const petsFiltrados = petsApi.filter((pet) => {
     const nomeCombina = pet.nome.toLowerCase().includes(busca.toLowerCase());
     const tipoCombina = filtro === "todos" || pet.tipo === filtro;
     return nomeCombina && tipoCombina;
