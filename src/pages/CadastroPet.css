@@ -1,0 +1,89 @@
+.container_cadastro {
+  max-width: 900px;
+  margin: 40px auto;
+  background: #f7f7f7;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.container_cadastro h2 {
+  margin-bottom: 20px;
+}
+
+.form_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+/* Área da imagem */
+.imagem_pet {
+  grid-column: span 2;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.circulo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+  font-size: 14px;
+}
+
+/* Campos */
+.campo {
+  display: flex;
+  flex-direction: column;
+}
+
+.campo.full {
+  grid-column: span 2;
+}
+
+.campo label {
+  font-size: 13px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  background: white;
+}
+
+/* textarea maior */
+.campo textarea {
+  min-height: 100px;
+  resize: none;
+}
+
+/* Botão */
+.btn_salvar {
+  grid-column: span 2;
+  margin-top: 10px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #ff5a7a;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn_salvar:hover {
+  background-color: #e04c69;
+}

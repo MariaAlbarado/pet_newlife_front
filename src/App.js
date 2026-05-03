@@ -2,9 +2,9 @@ import { FaPaw } from "react-icons/fa";
 import { useState } from "react";
 import Menu from "./componentes/Menu";
 import PetsCadastrados from "./pages/PetsCadastrados";
+import CadastroPet from "./pages/CadastroPet";
 
 import "./App.css";
-
 
 function App() {
   const [cpf, setCpf] = useState("");
@@ -37,8 +37,8 @@ function App() {
   return (
     <>
       <Menu />
-      <PetsCadastrados />
-      
+      <CadastroPet />
+
       {/*
       
       <div className="container_inicial">
