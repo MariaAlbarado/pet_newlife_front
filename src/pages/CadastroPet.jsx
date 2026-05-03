@@ -9,7 +9,7 @@ function CadastroPet() {
   const [sexo, setSexo] = useState("");
   const [porte, setPorte] = useState("");
   const [cor, setCor] = useState("");
-  const [foto, setFoto] = useState("");
+  const [imagem, setImagem] = useState("");
   const [descricao, setDescricao] = useState("");
 
   async function cadastrarPet(e) {
@@ -29,7 +29,7 @@ function CadastroPet() {
           sexo,
           porte,
           cor,
-          foto,
+          imagem,
           descricao,
         }),
       });
@@ -37,7 +37,6 @@ function CadastroPet() {
       if (resposta.ok) {
         alert("Pet cadastrado com sucesso!");
 
-        // limpar campos
         setNome("");
         setTipo("");
         setRaca("");
@@ -45,7 +44,7 @@ function CadastroPet() {
         setSexo("");
         setPorte("");
         setCor("");
-        setFoto("");
+        setImagem("");
         setDescricao("");
       } else {
         const erro = await resposta.json();
@@ -62,7 +61,6 @@ function CadastroPet() {
       <h2>Cadastro de Pet</h2>
 
       <form onSubmit={cadastrarPet} className="form_grid">
-
         <div className="imagem_pet">
           <div className="circulo">Sem imagem</div>
         </div>
@@ -117,12 +115,15 @@ function CadastroPet() {
 
         <div className="campo">
           <label>URL da imagem *</label>
-          <input value={foto} onChange={(e) => setFoto(e.target.value)} />
+          <input value={imagem} onChange={(e) => setImagem(e.target.value)} />
         </div>
 
         <div className="campo full">
           <label>Descrição *</label>
-          <textarea value={descricao} onChange={(e) => setDescricao(e.target.value)} />
+          <textarea
+            value={descricao}
+            onChange={(e) => setDescricao(e.target.value)}
+          />
         </div>
 
         <button type="submit" className="btn_salvar">
